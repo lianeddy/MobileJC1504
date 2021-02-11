@@ -1,5 +1,10 @@
 Di sesi ini kita belajar tentang dasar react native dan react hooks
 
-- useEffect
-- Fetch (axios) dengan Zomato API
-- Props functional components
+- Redux dengan Hooks
+- Platform
+- Dimensions
+- Orientation
+
+Exercise (Todo.js)
+
+- Membuat aplikasi todo list sederhana
