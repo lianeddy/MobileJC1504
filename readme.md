@@ -1,10 +1,4 @@
-Di sesi ini kita belajar tentang dasar react native dan react hooks
+Di sesi ini kita belajar tentang navigasi di aplikasi mobile dengan menggunakan react navigation.
 
-- Redux dengan Hooks
-- Platform
-- Dimensions
-- Orientation
-
-Exercise (Todo.js)
-
-- Membuat aplikasi todo list sederhana
+- Stack Navigator
+- Simple commerce with redux
