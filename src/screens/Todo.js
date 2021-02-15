@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Center from '../helpers/Center';
+import { ShowList, AddTodo } from '../components/Todo';
+import { database } from 'faker';
 
 // Exercise
 // Create A Todo App
@@ -20,10 +22,51 @@ import Center from '../helpers/Center';
 // nativebase
 
 const Todo = () => {
+  const [todo, setTodo] = useState([]);
+  const date = new Date();
+  const completeTodo = (id) => {
+    const tempArr = todo.map((val) => {
+      if (val.id === id) {
+        return {
+          ...val,
+          status: 'completed',
+          time: date.toTimeString().split(' ')[0],
+        };
+      }
+      return val;
+    });
+    setTodo(tempArr);
+  };
+
+  const deleteCompleted = (id) => {
+    const tempArr = todo.filter((val) => {
+      return val.id !== id;
+    });
+    setTodo(tempArr);
+  };
   return (
-    <Center>
-      <Text>Todo App</Text>
-    </Center>
+    // <React.Fragment>
+    <>
+      <ShowList
+        todo={todo}
+        completeTodo={completeTodo}
+        deleteCompleted={deleteCompleted}
+      />
+      <AddTodo
+        submit={(added) =>
+          setTodo([
+            ...todo,
+            {
+              id: Math.random(),
+              todo: added,
+              status: 'ongoing',
+              time: date.toTimeString().split(' ')[0],
+            },
+          ])
+        }
+      />
+    </>
+    // </React.Fragment>
   );
 };
 
