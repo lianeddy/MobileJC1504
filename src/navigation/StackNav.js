@@ -4,7 +4,7 @@ import Center from '../helpers/Center';
 import { createStackNavigator } from '@react-navigation/stack';
 import faker from 'faker';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCartAction } from '../redux/actions/';
+import { addToCartAction } from '../redux/actions';
 
 const ProductList = ({ navigation }) => {
   //   console.log(props);
@@ -80,7 +80,7 @@ const Cart = (props) => {
 
 const Stack = createStackNavigator();
 
-const Main = () => {
+const StackNav = () => {
   return (
     <Stack.Navigator initialRouteName="ProductList">
       <Stack.Screen name="ProductList" component={ProductList} />
@@ -90,4 +90,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default StackNav;
