@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import faker from 'faker';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCartAction } from '../redux/actions';
+import { FoodList } from '../components';
 
 const ProductList = ({ navigation }) => {
   //   console.log(props);
@@ -14,17 +15,7 @@ const ProductList = ({ navigation }) => {
         <Button title="Cart" onPress={() => navigation.navigate('Cart')} />
       )}
       data={Array.from(Array(50), () => faker.commerce.product())}
-      renderItem={({ item }) => (
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate('ProductDetail', {
-              productName: item,
-              price: Math.round(Math.random() * 10),
-            })
-          }>
-          <Text style={{ fontSize: 20 }}>{item}</Text>
-        </TouchableOpacity>
-      )}
+      renderItem={({ item }) => <FoodList item={item} />}
     />
   );
 };
@@ -53,6 +44,7 @@ const ProductDetail = ({ route, navigation }) => {
   );
 };
 const Cart = (props) => {
+  console.log(props);
   const cart = useSelector(({ cart }) => cart.cart);
   const renderTotal = () => {
     let total = 0;

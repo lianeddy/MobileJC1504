@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'react-native';
 import { Text, View, TextInput } from 'react-native';
-import { StackNav } from '.';
+import { DrawerNav, TabNav } from '.';
 import Center from '../helpers/Center';
 
 const MainNav = () => {
@@ -10,7 +10,7 @@ const MainNav = () => {
   return (
     <>
       {username ? (
-        <StackNav />
+        <DrawerNav />
       ) : (
         <Center>
           <TextInput placeholder="username" onChangeText={(e) => setText(e)} />

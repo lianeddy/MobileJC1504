@@ -9,10 +9,11 @@ import reducer from './src/redux/reducers';
 import { Header } from './src/components';
 import { NavigationContainer } from '@react-navigation/native';
 import {
-  // StackNav,
+  StackNav,
   // TabNav,
   // DrawerNav,
-  MainNav,
+  // MainNav,
+  // AuthStack,
 } from './src/navigation';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -26,10 +27,11 @@ const App = () => {
       <Provider store={store}>
         {/* <Header /> */}
         {/* <Todo /> */}
-        {/* <StackNav /> */}
+        <StackNav />
         {/* <TabNav /> */}
         {/* <DrawerNav /> */}
-        <MainNav />
+        {/* <MainNav /> */}
+        {/* <AuthStack /> */}
       </Provider>
     </NavigationContainer>
   );

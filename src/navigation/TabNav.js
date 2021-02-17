@@ -4,26 +4,22 @@ import Center from '../helpers/Center';
 import { Text } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { Button } from 'react-native';
+import { StackNav, DrawerNav } from '.';
 
 const Tab = createBottomTabNavigator();
 
-const Home = (props) => {
-  console.log(props);
+const Beranda = (props) => {
   return (
     <Center>
-      <Text>Home</Text>
-      <Button
-        title="Click Me"
-        onPress={() => props.navigation.jumpTo('Settings')}
-      />
+      <Text>Beranda</Text>
     </Center>
   );
 };
 
-const Settings = () => {
+const Pengaturan = ({ navigation }) => {
   return (
     <Center>
-      <Text>Settings</Text>
+      <Text>Pengaturan</Text>
     </Center>
   );
 };
@@ -31,13 +27,13 @@ const Settings = () => {
 const TabNav = () => {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="Beranda"
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color }) => {
           let iconName;
-          if (route.name === 'Home') {
+          if (route.name === 'Beranda') {
             iconName = 'home';
-          } else if (route.name === 'Settings') {
+          } else if (route.name === 'Pengaturan') {
             iconName = 'settings';
           }
           return (
@@ -45,8 +41,8 @@ const TabNav = () => {
           );
         },
       })}>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Settings" component={Settings} />
+      <Tab.Screen name="Beranda" component={StackNav} />
+      <Tab.Screen name="Pengaturan" component={Pengaturan} />
     </Tab.Navigator>
   );
 };
