@@ -6,7 +6,9 @@ import { addToCartAction } from '../redux/actions';
 import { useDispatch } from 'react-redux';
 import { Alert } from 'react-native';
 
-const ProductScreen = ({ route }) => {
+const ProductScreen = ({ route, navigation }) => {
+  console.log(navigation);
+  console.log(route);
   const dispatch = useDispatch();
 
   const addToCartPress = () => {

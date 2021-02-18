@@ -5,7 +5,7 @@ import { Header, ListItem, SearchBar } from 'react-native-elements';
 import faker from 'faker';
 
 const HomeScreen = ({ navigation }) => {
-  console.log(navigation);
+  // console.log(navigation);
   const [search, setSearch] = useState('');
   const [data, setData] = useState([]);
 

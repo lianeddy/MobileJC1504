@@ -28,24 +28,24 @@ const store = configureStore({
 
 const App = () => {
   return (
-    <SafeAreaProvider>
-      <NavigationContainer>
-        <Provider store={store}>
-          {/* <Header /> */}
-          {/* <Todo /> */}
-          {/* <StackNav /> */}
-          {/* <TabNav /> */}
-          {/* <DrawerNav /> */}
-          {/* <MainNav /> */}
-          {/* <AuthStack /> */}
-          {/* <HomeScreen /> */}
-          {/* <ProductScreen /> */}
-          {/* <ProductStack /> */}
-          {/* <CartScreen /> */}
-          <ProfileDrawer />
-        </Provider>
-      </NavigationContainer>
-    </SafeAreaProvider>
+    // <SafeAreaProvider>
+    <NavigationContainer>
+      <Provider store={store}>
+        {/* <Header /> */}
+        {/* <Todo /> */}
+        {/* <StackNav /> */}
+        {/* <TabNav /> */}
+        {/* <DrawerNav /> */}
+        {/* <MainNav /> */}
+        {/* <AuthStack /> */}
+        {/* <HomeScreen /> */}
+        {/* <ProductScreen /> */}
+        {/* <ProductStack /> */}
+        {/* <CartScreen /> */}
+        <ProfileDrawer />
+      </Provider>
+    </NavigationContainer>
+    // </SafeAreaProvider>
   );
 };
 
