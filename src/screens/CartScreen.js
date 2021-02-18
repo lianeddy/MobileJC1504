@@ -10,7 +10,7 @@ import {
 import { useSelector } from 'react-redux';
 import Center from '../helpers/Center';
 import faker from 'faker';
-import { Button } from 'react-native-elements';
+import { Button, Header } from 'react-native-elements';
 
 // UNFINISHED
 
@@ -45,14 +45,23 @@ const arr = [
   },
 ];
 
-const CartScreen = () => {
+const CartScreen = ({ navigation }) => {
   const [data, setData] = useState([]);
   //   useEffect(() => {
   //     setData(Array.from(Array(15), () => faker.image.image()));
   //   }, []);
   const { cart } = useSelector((state) => state.cart);
   return (
-    <Center>
+    <>
+      <Header
+        centerComponent={{ text: 'Cart', style: { color: 'white' } }}
+        leftComponent={{
+          icon: 'arrow-left',
+          color: 'white',
+          onPress: () => navigation.goBack(),
+        }}
+        containerStyle={{ backgroundColor: 'teal' }}
+      />
       <FlatList
         keyExtractor={(item, idx) => idx.toString()}
         data={arr}
@@ -142,13 +151,15 @@ const CartScreen = () => {
           />
         </View>
       </View>
-    </Center>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
   containerStyle: {
     marginTop: 30,
+    alignItems: 'center',
+    // flex: 1,
   },
   listContainer: {
     // flex: 1,
