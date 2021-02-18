@@ -1,3 +1,7 @@
-Di sesi ini kita belajar tentang navigasi di aplikasi mobile dengan menggunakan react navigation.
+Di sesi ini kita belajar tentang component library.
 
-- Nesting Navigators
+- React Native Elements
+
+To do
+
+- Style simple commerce app
