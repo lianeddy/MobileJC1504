@@ -16,11 +16,12 @@ import {
   // TabNav,
   // DrawerNav,
   // MainNav,
-  // AuthStack,
+  AuthStack,
   // ProductStack,
-  ProfileDrawer,
+  // ProfileDrawer,
 } from './src/navigation';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Sandbox from './src/screens/Sandbox';
 
 const store = configureStore({
   reducer,
@@ -37,12 +38,13 @@ const App = () => {
         {/* <TabNav /> */}
         {/* <DrawerNav /> */}
         {/* <MainNav /> */}
-        {/* <AuthStack /> */}
+        <AuthStack />
         {/* <HomeScreen /> */}
         {/* <ProductScreen /> */}
         {/* <ProductStack /> */}
         {/* <CartScreen /> */}
-        <ProfileDrawer />
+        {/* <ProfileDrawer /> */}
+        {/* <Sandbox /> */}
       </Provider>
     </NavigationContainer>
     // </SafeAreaProvider>

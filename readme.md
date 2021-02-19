@@ -1,7 +1,8 @@
 Di sesi ini kita belajar tentang component library.
 
-- React Native Elements
+- NativeBase
+- React Native Easy Grid
 
 To do
 
-- Style simple commerce app
+- Style simple Authentication Screens
